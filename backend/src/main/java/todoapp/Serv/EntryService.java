@@ -1,5 +1,7 @@
 package todoapp.Serv;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,18 @@ public class EntryService {
 	 
 	 public void addData(Entries  en) {
 		 er.save(en);
+	 }
+	 
+	 public List<Entries> getEntries(){
+		  return er.findAll();
+	 }
+	 
+	 public void updateEntries(String ele,Entries en) {
+		  Entries element=er.getByValue(ele);
+		  element.setValueType(en.getValueType());
+		  er.save(element);
+		  
+		 
 	 }
 
 }
