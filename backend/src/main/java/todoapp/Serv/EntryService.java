@@ -24,9 +24,11 @@ public class EntryService {
 	 public void updateEntries(String ele,Entries en) {
 		  Entries element=er.getByValue(ele);
 		  element.setValueType(en.getValueType());
-		  er.save(element);
-		  
-		 
+		  er.save(element); 
+	 }
+	 
+	 public void deleteEntry(String value) {
+		er.deleteByValue(value);
 	 }
 
 }

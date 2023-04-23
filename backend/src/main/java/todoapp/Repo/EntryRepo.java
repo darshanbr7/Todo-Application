@@ -8,5 +8,6 @@ import todoapp.Entries.Entries;
 @Repository
 public interface EntryRepo extends MongoRepository<Entries, String> {
 	public Entries getByValue(@PathVariable String element);
+	public Entries deleteByValue(@PathVariable String element);
 
 }
